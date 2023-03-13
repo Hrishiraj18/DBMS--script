@@ -1,0 +1,32 @@
+create database course;
+use course;
+create table employee(emp_no int(10),emp_name Varchar(20), DOB varchar(10),address Varchar(30),DOJ varchar(10),mobile_no int(13),dept_no int(10), salary int(10),PRIMARY KEY(emp_no),foreign key(dept_no));
+select *from employee;
+create table department(dept_no varchar(10), dept_name varchar(20),location varchar(20),PRIMARY KEY(dept_no));
+select *from department;
+alter table employee modify emp_no int not null; 
+alter table employee modify dept_no int (10) not null;
+INSERT INTO department values('111','MCA','KOLLAM');
+INSERT INTO department values('112','Msc','TVM');
+INSERT INTO department values('121','Bsc','aleppy');
+select * from department;
+INSERT INTO employee values('121','Abhinand','16/02.1997','pandalam','19/05.22',111111111,863246,728236);
+INSERT INTO employee values('111','Akash','12/02/1999','attingal','14/04/22',665133111,86332346,458236);
+INSERT INTO employee values('123','Arun kumar','21/02/1992','kozhikode','19/05/22',12221111,653433246,9928236);
+select * from employee;
+drop table employee;
+describe employee;
+alter table employee add gender varchar(20);
+describe employee;
+select *from department;
+ALTER TABLE department drop location;
+show tables;
+drop table employee;
+show tables;
+drop table department;
+show databases;
+drop database course;
+show databases;
+show tables;
+
+

@@ -1,0 +1,16 @@
+use course;
+create table department(dept_no varchar(10), dept_name varchar(20),PRIMARY KEY(dept_no));
+create table employee(emp_no int(10),emp_name Varchar(20)NOT NULL, DOB varchar(10),address Varchar(30),DOJ varchar(10),mobile_no int(13)UNIQUE,dept_no int(10), salary int(10),designation varchar(20),PRIMARY KEY(emp_no));
+describe employee;
+INSERT INTO employee values('122','Abhinand','16/12/1994','pandalam','12/05/22',9559242343,101,700000,'COO');
+INSERT INTO employee values('122','Amal','16/12/1994','Alappuzha','19/05/22',657652432,103,750000,'CEO');
+INSERT INTO employee values('123','Jithin','20/04/1993','Kottayam','19/05/22',984568562,102,600000,'AI engineer');
+INSERT INTO employee values('124','Iqbal','12/03/1992','Tvm','19/05/22',876456783,105,800000,'DEVOPS');
+INSERT INTO employee values('125','Subi','26/04/1992','Kollam','19/05/22',32462363,104,900000,'CFO');
+INSERT INTO department values('102','AI');
+INSERT INTO department values('104','Finance');
+INSERT INTO department values('105','Developer');
+INSERT INTO department values('101','Administartion');
+INSERT INTO department values('103','Chief');
+select * from department;
+select * from employee;
