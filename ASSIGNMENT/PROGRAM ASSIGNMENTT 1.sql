@@ -75,12 +75,12 @@ MAXVALUE maximum value
 CYCLE|NOCYCLE ;*/
 
 #create procedure
-
+DELIMITER &&  
 CREATE PROCEDURE Product_Purchase(IN purchase_id INT)
 BEGIN
 	SELECT p.Prodesc,pp.qty,p.Price
     FROM Purchase pp
     JOIN Product p ON pp.Proid-p.Prodid
     WHERE pp.Purid=purchase_id;
-END//
-DELIMITER;
+END&&
+DELIMITER &&
