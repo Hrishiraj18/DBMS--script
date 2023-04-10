@@ -84,3 +84,18 @@ BEGIN
     WHERE pp.Purid=purchase_id;
 END&&
 DELIMITER &&
+
+#trigger created
+DELIMITER $$
+CREATE TRIGGER
+check_customer_purchase_qty
+BEFORE INSERT ON SALES
+FOR EACH ROW BEGIN
+DECLARE customer_purchase_qty INT;
+SELECT SUM(qty) INTO customer_purchase_qty
+FROM Sales WHERE custname=NEW.custname;
+IF(customer_purchase_qty+NEW.qty)>5 THEN SIGNAL sqlstate'45000'
+SET message_text='Customer cannot purchase more than 5 products';
+END IF;
+END$$
+DELIMITER $$
